@@ -253,12 +253,8 @@ class SchemaGenerator extends BaseGenerator {
           return s.defaultValue;
         },
       );
-      if (unionValue != null) {
-        unionValues.add(unionValue);
-        unionValue = "\n@FreezedUnionValue('$unionValue')";
-      } else {
-        unionValue = '';
-      }
+      unionValues.add(unionValue);
+      unionValue = "\n@FreezedUnionValue('$unionValue')";
 
       /// Class header
       file.writeAsStringSync("""
